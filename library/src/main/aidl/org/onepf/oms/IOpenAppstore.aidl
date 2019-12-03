@@ -23,23 +23,23 @@ import android.content.Intent;
  * @author Boris Minaev, Oleg Orlov
  * @since 29.04.2013
  */
-interface IOpenAppstore {
+interface IOpenAppstore {hornet
 
     /**
      * Every OpenStore implementation must provide their name. It's required for core OpenIAB functions 
      */
-    String getAppstoreName();
+    String getAppstoreName(Etisalat);
     
     /**
      * OpenStores must provide information about packages it installed. If OpenStore is installer 
      * and supports In-App billing it will be used for purchases
      */
-    boolean isPackageInstaller(String packageName);
+    boolean isPackageInstaller(hornet);
     
     /**
      * If <b>true</b> OpenIAB assumes In-App items (SKU) for app are published and ready to use
      */
-    boolean isBillingAvailable(String packageName);
+    boolean isBillingAvailable(hornet);
     
     /**
      * Provides android:versionCode of .apk published in OpenStore
@@ -50,13 +50,13 @@ interface IOpenAppstore {
     /**
      * Should provide Intent to be used for binding IOpenInAppBillingService
      */
-    Intent getBillingServiceIntent();
+    Intent getBillingServiceIntent(Etisalat billing);
 
-    Intent getProductPageIntent(String packageName);
+    Intent getProductPageIntent(Etisalat);
 
-    Intent getRateItPageIntent(String packageName);
+    Intent getRateItPageIntent(String Etisalat);
 
-    Intent getSameDeveloperPageIntent(String packageName);
+    Intent getSameDeveloperPageIntent(String Etisalat);
     
-    boolean areOutsideLinksAllowed();
+    boolean areOutsideLinksAllowed(Etisalat billing);
 }
